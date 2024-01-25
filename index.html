@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Imersão</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
-        integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"
-        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/reset.css">
+    <link rel="stylesheet" href="src/vars.css">
+    <link rel="stylesheet" href="src/sidebard-footer.css">
+    <link rel="stylesheet" href="src/main-content.css">
+    <link rel="stylesheet" href="src/playlist-content.css">
+    <link rel="stylesheet" href="src/media-queries.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/16ea865109.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -18,11 +21,13 @@
 
     <div class="sidebar">
         <nav class="sidebar__navigation">
+
             <div class="logo">
                 <a href="">
                     <img src="assets/icons/logo-spotify.png" alt="Logo" />
                 </a>
             </div>
+
             <ul>
                 <li>
                     <a href="">
@@ -30,6 +35,7 @@
                         <span>Início</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="">
                         <span class="fa fa-search"></span>
@@ -39,7 +45,195 @@
             </ul>
         </nav>
 
+        <div class="library">
+            <div class="library__content">
+                <button class="library__button">
+                    <a class="library__button_conteiner">
+                        <img class="library__button-icon" src="assets/icons/svgs_collection/biblioteca.svg" alt="Icone biblioteca">
+                        <span class="library__text">Sua biblioteca</span>
+                    </a>
+                </button>
+                <span class="fa fa-plus"></span>
+            </div>
+
+            <section class="section-playlist">
+                <div class="section-playlist__content">
+                    <span class="text title">Crie sua primeira playlist</span>
+                    <span class="text subtitle">É fácil, vamos te ajudar</span>
+                    <button class="section-playlist__button">
+                        <span>Criar playlist</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="section-podcast">
+                <div class="section-podcast__content">
+                    <span class="text title">Que tal seguir um podcast novo?</span>
+                    <span class="text subtitle">Avisaremos você sobre novos eposódios.</span>
+                    <button class="section-podcast__button">
+                        <span>Explore podcasts</span>
+                    </button>
+                </div>
+            </section>
+
+            <div class="cookies">
+                <a href="">Cookies</a>
+            </div>
+
+            <div class="languages">
+                <button class="languages__button">
+                <span class="fa fa-globe"></span>
+                <span>Português do Brasil</span>        
+                </button>
+            </div>
+
+        </div>
     </div>
+
+    <div class="main">
+
+        <header class="navegation">
+
+            <div class="navegation_left">
+                <button class="voltar">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+                <button class="avançar">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="navegation_center">
+                <i class="button_pesquisar_nav">
+                    <span class="fa fa-search"></span>
+                </i>
+
+                <input class="navegation_buscar" type="text" maxlength="800" placeholder="O que você quer ouvir?">
+
+                <i class="button_cancelar_nav">
+                    <i class="fa fa-x"></i>
+                </i>
+            </div>
+
+            <div class="navegation_right">
+                <div class="nav_button_right">
+                    <button class="button_inscrever">Inscreva-se</button>
+                    <button class="button_entrar">Entrar</button>
+                </div>
+            </div>
+        </header>
+        
+    </div>
+
+    <div class="playlist-container">
+        <div id="result-playlists">
+            <div class="playlist">
+            <!-- COLOCAR O BOM DIA | BOA TARDE | BOA NOITE -->
+            <h1 id="greeting">Bom dia!</h1>
+            <h2 class="session">Navegar por todas as seções</h2>
+            </div>
+        </div>
+
+        <div class="offer__scroll-container">
+            <div class="offer__list">
+                <section class="offer__list-item">
+                    <!-- CARD 1 -->
+                    <a href="" class="cards">
+                        <!--
+                        <i class="button_play">
+                            <i class="fa fa-play"></i>-->
+                        <div class="cards card1">
+                            <img src="assets/playlist/1.jpeg" alt="">
+                            <span>Jazz in the Background</span>
+                            <p>Soft instrumental Jazz for all your activities.</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 2 -->
+                    <a href="" class="cards">
+                        <div class="cards card2">
+                            <img src="assets/playlist/2.jpg" alt="">
+                            <span>All Out 2020s</span>
+                            <p>The biggest songs of the 2020s.</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 3 -->
+                    <a href="" class="cards">
+                        <div class="cards card3">
+                            <img src="assets/playlist/3.jpeg" alt="">
+                            <span>Chillout Lounge</span>
+                            <p>Just lean back and enjoy relaxed beats.</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 4 -->
+                    <a href="" class="cards">
+                        <div class="cards card4">
+                            <img src="assets/playlist/4.jpeg" alt="">
+                            <span>Today's Top Hits</span>
+                            <p>Jack Harlow is on top of the Hottest 50!</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 5 -->
+                    <a href="" class="cards">
+                        <div class="cards card5">
+                            <img src="assets/playlist/5.jpeg" alt="Cover: Foo Fighters">
+                            <span>Rock Classics</span>
+                            <p>Rock legends & epic songs that continue to inspire generations.</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 6 -->
+                    <a href="" class="cards">
+                        <div class="cards card6">
+                            <img src="assets/playlist/6.jpeg" alt="">
+                            <span>All Out 80s</span>
+                            <p>The biggest songs of the 1980s.</p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 7 -->
+                    <a href="" class="cards">
+                        <div class="cards card7">
+                            <img src="assets/playlist/7.jpeg" alt="">
+                            <span>Lofi beats</span>
+                            <p>chill beats, lofi vibes, new tracks every week... </p>
+                        </div>
+                    </a>
+
+                    <!-- CARD 8 -->
+                    <a href="" class="cards">
+                        <div class="cards card4">
+                            <img src="assets/playlist/8.jpeg" alt="">
+                            <span>Stress Relief</span>
+                            <p>Calm your mind from anxiety with gentle piano and ambient music.</p>
+                        </div>
+                    </a>
+
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer_content">
+            <div class="text-1">
+                <span class="text title">Testar agora o Premium de graça</span>
+            </div>
+            <div class="text-2">
+                <span class="text subtitle"> Inscreva-se para curtir música ilimitada e podcasts só com alguns anúncios. Não precisa de cartão de crédito.</span>
+            </div>
+        </div>
+
+        <div class="">
+            <button class="footer_button">
+                <span>Inscreva-se grátis</span>
+            </button>
+        </div>
+    </footer>
 
 </body>
 
