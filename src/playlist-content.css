@@ -80,6 +80,15 @@
     cursor: pointer;
 }
 
+#old-container{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;    
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    gap: 15px;
+}
+
 .cards{
     position: relative;
     overflow: hidden;
@@ -108,8 +117,7 @@
     padding: 4px;
     margin-top: 8px;
 
-    max-width: 160px;
-    
+    max-width: 160px;    
 
     color: var(--text-base-light);
     font-size: 18px;
@@ -146,4 +154,8 @@
     color: #b4b4b4;
     font-size: 13px;
     font-weight: 600;
+}
+
+.hidden{
+    display: none;
 }

@@ -108,7 +108,7 @@
                     <span class="fa fa-search"></span>
                 </i>
 
-                <input class="navegation_buscar" type="text" maxlength="800" placeholder="O que você quer ouvir?">
+                <input id="search-input" class="navegation_buscar" type="text" maxlength="800" placeholder="O que você quer ouvir?">
 
                 <i class="button_cancelar_nav">
                     <i class="fa fa-x"></i>
@@ -125,7 +125,7 @@
         
     </div>
 
-    <div class="playlist-container">
+    <div class="playlist-container" id="playlist-container">
         <div id="result-playlists">
             <div class="playlist">
             <!-- COLOCAR O BOM DIA | BOA TARDE | BOA NOITE -->
@@ -137,80 +137,106 @@
         <div class="offer__scroll-container">
             <div class="offer__list">
                 <section class="offer__list-item">
-                    <!-- CARD 1 -->
-                    <a href="" class="cards">
-                        <!--
-                        <i class="button_play">
-                            <i class="fa fa-play"></i>-->
-                        <div class="cards card1">
-                            <img src="assets/playlist/1.jpeg" alt="">
-                            <span>Jazz in the Background</span>
-                            <p>Soft instrumental Jazz for all your activities.</p>
-                        </div>
-                    </a>
+                    
+                    <div id="old-container">
+                        <!-- CARD 1 -->
+                        <a href="" class="cards">
+                            <!--
+                            <i class="button_play">
+                                <i class="fa fa-play"></i>-->
+                            <div class="cards card1">
+                                <img src="assets/playlist/1.jpeg" alt="">
+                                <span>Jazz in the Background</span>
+                                <p>Soft instrumental Jazz for all your activities.</p>
+                            </div>
+                        </a>
 
-                    <!-- CARD 2 -->
-                    <a href="" class="cards">
-                        <div class="cards card2">
-                            <img src="assets/playlist/2.jpg" alt="">
-                            <span>All Out 2020s</span>
-                            <p>The biggest songs of the 2020s.</p>
-                        </div>
-                    </a>
+                        <!-- CARD 2 -->
+                        <a href="" class="cards">
+                            <div class="cards card2">
+                                <img src="assets/playlist/2.jpg" alt="">
+                                <span>All Out 2020s</span>
+                                <p>The biggest songs of the 2020s.</p>
+                            </div>
+                        </a>
 
-                    <!-- CARD 3 -->
-                    <a href="" class="cards">
-                        <div class="cards card3">
-                            <img src="assets/playlist/3.jpeg" alt="">
-                            <span>Chillout Lounge</span>
-                            <p>Just lean back and enjoy relaxed beats.</p>
-                        </div>
-                    </a>
+                        <!-- CARD 3 -->
+                        <a href="" class="cards">
+                            <div class="cards card3">
+                                <img src="assets/playlist/3.jpeg" alt="">
+                                <span>Chillout Lounge</span>
+                                <p>Just lean back and enjoy relaxed beats.</p>
+                            </div>
+                        </a>
 
-                    <!-- CARD 4 -->
-                    <a href="" class="cards">
-                        <div class="cards card4">
-                            <img src="assets/playlist/4.jpeg" alt="">
-                            <span>Today's Top Hits</span>
-                            <p>Jack Harlow is on top of the Hottest 50!</p>
-                        </div>
-                    </a>
+                        <!-- CARD 4 -->
+                        <a href="" class="cards">
+                            <div class="cards card4">
+                                <img src="assets/playlist/4.jpeg" alt="">
+                                <span>Today's Top Hits</span>
+                                <p>Jack Harlow is on top of the Hottest 50!</p>
+                            </div>
+                        </a>
 
-                    <!-- CARD 5 -->
-                    <a href="" class="cards">
-                        <div class="cards card5">
-                            <img src="assets/playlist/5.jpeg" alt="Cover: Foo Fighters">
-                            <span>Rock Classics</span>
-                            <p>Rock legends & epic songs that continue to inspire generations.</p>
-                        </div>
-                    </a>
+                        <!-- CARD 5 -->
+                        <a href="" class="cards">
+                            <div class="cards card5">
+                                <img src="assets/playlist/5.jpeg" alt="Cover: Foo Fighters">
+                                <span>Rock Classics</span>
+                                <p>Rock legends & epic songs that continue to inspire generations.</p>
+                            </div>
+                        </a>
 
-                    <!-- CARD 6 -->
-                    <a href="" class="cards">
-                        <div class="cards card6">
-                            <img src="assets/playlist/6.jpeg" alt="">
-                            <span>All Out 80s</span>
-                            <p>The biggest songs of the 1980s.</p>
-                        </div>
-                    </a>
+                        <!-- CARD 6 -->
+                        <a href="" class="cards">
+                            <div class="cards card6">
+                                <img src="assets/playlist/6.jpeg" alt="">
+                                <span>All Out 80s</span>
+                                <p>The biggest songs of the 1980s.</p>
+                            </div>
+                        </a>
 
-                    <!-- CARD 7 -->
-                    <a href="" class="cards">
-                        <div class="cards card7">
-                            <img src="assets/playlist/7.jpeg" alt="">
-                            <span>Lofi beats</span>
-                            <p>chill beats, lofi vibes, new tracks every week... </p>
-                        </div>
-                    </a>
+                        <!-- CARD 7 -->
+                        <a href="" class="cards">
+                            <div class="cards card7">
+                                <img src="assets/playlist/7.jpeg" alt="">
+                                <span>Lofi beats</span>
+                                <p>chill beats, lofi vibes, new tracks every week... </p>
+                            </div>
+                        </a>
 
-                    <!-- CARD 8 -->
-                    <a href="" class="cards">
-                        <div class="cards card4">
-                            <img src="assets/playlist/8.jpeg" alt="">
-                            <span>Stress Relief</span>
-                            <p>Calm your mind from anxiety with gentle piano and ambient music.</p>
+                        <!-- CARD 8 -->
+                        <a href="" class="cards">
+                            <div class="cards card4">
+                                <img src="assets/playlist/8.jpeg" alt="">
+                                <span>Stress Relief</span>
+                                <p>Calm your mind from anxiety with gentle piano and ambient music.</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- CARD ESCONDIDO -->
+                    <div id="new-container">
+                        <div id="result-artist" class="hidden">
+                            <div class="grid-container">
+
+                                <div class="artist-card" id="">
+                                    <div class="card-img">
+                                        <img id="artist-img" class="artist-img" />
+                                        <div class="play">
+                                            <span class="fa fa-solid fa-play"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-text">
+                                        <a title="Foo Fighters" class="vst" href=""></a>
+                                        <span class="artist-name" id="artist-name"></span>
+                                        <span class="artist-categorie">Artista</span>
+                                        </a>
+                                </div>
+                            </div>
                         </div>
-                    </a>
+                    </div>
 
                 </section>
             </div>
@@ -234,6 +260,8 @@
             </button>
         </div>
     </footer>
+
+<script type="text/javascript" src="script.js"></script>
 
 </body>
 
