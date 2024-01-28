@@ -21,6 +21,14 @@ body {
     bottom: 0;
     padding: 8px;
     width: 400px;
+
+    max-width: 100vw;
+    max-height: 100vw;
+
+    margin: 0px 8px 88px 0px;
+    flex-grow: 1;
+
+
     align-items: stretch;
 }
 

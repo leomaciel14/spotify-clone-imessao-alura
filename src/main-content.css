@@ -45,12 +45,13 @@
     color: #fff;
     font-size: 15px;
     margin-right: 3px;
-    transition: transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     cursor: pointer;
 }
 
 .voltar:hover{
     transform: scale(1.05);
+    background-color: #242424;
 }
 
 .avançar {
@@ -62,12 +63,13 @@
     color: #fff;
     font-size: 15px;
     margin-left: 3px;
-    transition: transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     cursor: pointer;
 }
 
 .avançar:hover{
     transform: scale(1.05);
+    background-color: #242424;
 }
 
 .navegation_center{

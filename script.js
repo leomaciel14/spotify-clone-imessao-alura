@@ -1,42 +1,16 @@
-const searchInput = document.getElementById('search-input');
-const resultsArtist = document.getElementById('result-artist');
-const resultPlaylist = document.getElementById('result-playlists');
-const playlistContainer = document.getElementById('playlist-container');
+//SISTEMA BOM DIA | BOA TARDE | BOA NOITE
 
-function requestApi(searchTerm) {
-    fetch(`http://localhost:3000/artists?name_like=${searchTerm}`)
-    .then((response) => response.json())
-    .then((results) => displayResults(results));
-}
+// Declaração de variaveis para pegar o elemento do html e definir a hora atual.
+const greetingElement = document.getElementById("greeting");
+const currentHour = new Date().getHours();
 
-function displayResults(results) {
-    hidePlaylists();
-    const artistImage = document.getElementById("artist-img");
-    const artistName = document.getElementById("artist-name");
+// Função para interpretar qual a melhor mensagem baseado na hora atual
+const greetingMessage =
+currentHour >= 5 && currentHour < 12
+    ? "Bom dia!"
+    : currentHour >= 12 && currentHour < 18
+    ? "Boa tarde!"
+    : "Boa noite!";
 
-    if (results.length > 0) {
-        const firstArtist = results[0];
-        artistImage.src = firstArtist.urlImg;
-        artistName.innerText = firstArtist.name;
-        // Corrija a linha abaixo
-        document.getElementById("result-artist").classList.remove("hidden");
-    } else {
-        // Corrija a linha abaixo
-        document.getElementById("result-artist").classList.add("hidden");
-    }
-}
-
-
-function hidePlaylists() {
-    playlistContainer.classList.add("hidden");
-}
-
-document.addEventListener('input', function () {
-    const searchTerm = searchInput.value.trim().toLowerCase();  // Remover espaços extras e tornar minúsculo
-    if (searchTerm === "") {
-    resultArtist.classList.add("hidden");
-    playlistContainer.classList.remove("hidden");
-    } else {
-    requestApi(searchTerm);
-    }
-});
+// Exibe a mensagem no HTML
+greetingElement.textContent = greetingMessage;

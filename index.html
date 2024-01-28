@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="src/main-content.css">
     <link rel="stylesheet" href="src/playlist-content.css">
     <link rel="stylesheet" href="src/media-queries.css">
+    <link rel="stylesheet" href="src/media-player.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/16ea865109.js" crossorigin="anonymous"></script>
@@ -110,9 +111,9 @@
 
                 <input id="search-input" class="navegation_buscar" type="text" maxlength="800" placeholder="O que você quer ouvir?">
 
-                <i class="button_cancelar_nav">
-                    <i class="fa fa-x"></i>
-                </i>
+                <a class="button_cancelar_nav" >
+                    <i class="fa fa-x" id="button_cancelar"></i>
+                </a>
             </div>
 
             <div class="navegation_right">
@@ -136,15 +137,17 @@
 
         <div class="offer__scroll-container">
             <div class="offer__list">
+
                 <section class="offer__list-item">
                     
+                <div id="resultados-padrao">
                     <div id="old-container">
                         <!-- CARD 1 -->
                         <a href="" class="cards">
-                            <!--
-                            <i class="button_play">
-                                <i class="fa fa-play"></i>-->
                             <div class="cards card1">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/1.jpeg" alt="">
                                 <span>Jazz in the Background</span>
                                 <p>Soft instrumental Jazz for all your activities.</p>
@@ -154,6 +157,9 @@
                         <!-- CARD 2 -->
                         <a href="" class="cards">
                             <div class="cards card2">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/2.jpg" alt="">
                                 <span>All Out 2020s</span>
                                 <p>The biggest songs of the 2020s.</p>
@@ -163,6 +169,9 @@
                         <!-- CARD 3 -->
                         <a href="" class="cards">
                             <div class="cards card3">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/3.jpeg" alt="">
                                 <span>Chillout Lounge</span>
                                 <p>Just lean back and enjoy relaxed beats.</p>
@@ -172,6 +181,9 @@
                         <!-- CARD 4 -->
                         <a href="" class="cards">
                             <div class="cards card4">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/4.jpeg" alt="">
                                 <span>Today's Top Hits</span>
                                 <p>Jack Harlow is on top of the Hottest 50!</p>
@@ -181,6 +193,9 @@
                         <!-- CARD 5 -->
                         <a href="" class="cards">
                             <div class="cards card5">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/5.jpeg" alt="Cover: Foo Fighters">
                                 <span>Rock Classics</span>
                                 <p>Rock legends & epic songs that continue to inspire generations.</p>
@@ -190,6 +205,9 @@
                         <!-- CARD 6 -->
                         <a href="" class="cards">
                             <div class="cards card6">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/6.jpeg" alt="">
                                 <span>All Out 80s</span>
                                 <p>The biggest songs of the 1980s.</p>
@@ -199,6 +217,9 @@
                         <!-- CARD 7 -->
                         <a href="" class="cards">
                             <div class="cards card7">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/7.jpeg" alt="">
                                 <span>Lofi beats</span>
                                 <p>chill beats, lofi vibes, new tracks every week... </p>
@@ -208,12 +229,17 @@
                         <!-- CARD 8 -->
                         <a href="" class="cards">
                             <div class="cards card4">
+                                <div class="play">
+                                    <span class="fa fa-solid fa-play"></span>
+                                </div>
                                 <img src="assets/playlist/8.jpeg" alt="">
                                 <span>Stress Relief</span>
                                 <p>Calm your mind from anxiety with gentle piano and ambient music.</p>
                             </div>
                         </a>
                     </div>
+                </div>
+
 
                     <!-- CARD ESCONDIDO -->
                     <div id="new-container">
@@ -224,14 +250,16 @@
                                     <div class="card-img">
                                         <img id="artist-img" class="artist-img" />
                                         <div class="play">
-                                            <span class="fa fa-solid fa-play"></span>
+                                            <span class="fa fa-solid fa-play" id="playButton"></span>
                                         </div>
                                     </div>
 
                                     <div class="card-text">
                                         <a title="Foo Fighters" class="vst" href=""></a>
-                                        <span class="artist-name" id="artist-name"></span>
-                                        <span class="artist-categorie">Artista</span>
+                                        <div class="artist-infos">
+                                            <span class="artist-name" id="artist-name"></span>
+                                            <p class="artist-genre" id="artist-genre"></p>
+                                        </div>
                                         </a>
                                 </div>
                             </div>
@@ -261,7 +289,38 @@
         </div>
     </footer>
 
+    <footer class="Media-Player">
+        <div class="card-play">
+            <img class="current-cover" id="current-cover" src="assets/playlist/2.jpg" alt="">
+            <div class="player-text">
+                <span class="current-title" id="current-title">Wish you are here</span>
+                <span class="current-artist" id="current-artist">Pink Floyd</span>
+            </div>
+        </div>
+
+        <div class="player-options">
+            <i class="fa fa-backward"></i>
+            <i class="fa fa-pause"></i>
+            <i class="fa fa-forward"></i>
+                <div class="player-status">
+                    <span class="time_text" id="time_current">0:00</span>
+
+                    <div class="progresso">
+                        <i class="fa fa-minus" id="bar-2"></i>
+                    </div>
+
+                    <span class="time_text" id="time_remain">3:42</span>
+                </div>
+
+        </div>
+
+        <div class="volume-options">
+            <i class="fa fa-volume-high"></i>
+        </div>
+    </footer>
+
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="search.js"></script>
 
 </body>
 

@@ -4,7 +4,7 @@
     align-items: flex-start;
     justify-content: flex-start;
 
-    position: fixed;
+    position: relative;
     top: 74px;
     right: 8px;
     bottom: 83px;
@@ -12,7 +12,7 @@
     max-width: 100vw;
     max-height: 100vw;
 
-    margin: 8px 8px 10px 415px;
+    margin: 0px 8px 82px 423px;
     flex-grow: 1;
     
     background: rgb(16,16,19);
@@ -70,7 +70,7 @@
 
 .fa-play {
     background-color: #1ed760;
-    padding: 16px;
+    padding: 8px;
     border: none;
     border-radius: 9999px;
     color: #fff;
@@ -96,10 +96,16 @@
     background-color: #1c1c1c;
     padding: 6px;
     transition: background-color .3s;
+    text-decoration: none;
 }
 
 .cards:hover{
     background-color: #303030;
+}
+
+.cards:hover .play .fa-play {
+    opacity: 1;
+    transform: translateY(-20px);
 }
 
 .cards img{
@@ -117,22 +123,6 @@
     padding: 4px;
     margin-top: 8px;
 
-    max-width: 160px;    
-
-    color: var(--text-base-light);
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.cards span{
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden; 
-
-    display: flex;
-    padding: 4px;
-    margin-top: 8px;
     max-width: 160px;    
 
     color: var(--text-base-light);
@@ -159,3 +149,85 @@
 .hidden{
     display: none;
 }
+
+#new-container{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;    
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    gap: 15px;
+}
+
+.card-img img{
+    width: 180px;
+    height: 180px;
+}
+
+.artist-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #1c1c1c;
+    padding: 12px;
+    transition: background-color .3s;
+}
+
+.artist-card:hover{
+    background-color: #303030;
+}
+
+.card-text{
+    flex-direction: column;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    display: flex;
+    padding: 4px;
+    margin-top: 8px;
+
+    max-width: 160px;    
+
+    color: var(--text-base-light);
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+.artist-genre{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; 
+
+    max-width: 160px;
+    max-height: 25px;
+    line-height: 2.6;
+
+    color: #b4b4b4;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.play .fa-play {
+    position: absolute;
+    right: 20px;
+    top: 130px;
+    padding: 20px;
+    background-color: #1db954;
+    border-radius: 100%;
+    font-size: 14px;
+    opacity: 0;
+    transition: all ease 0.4s;
+}
+
+.artist-card:hover .play .fa-play {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+.play .fa-play:hover {
+    padding: 20px;
+    cursor: pointer;
+}
+
