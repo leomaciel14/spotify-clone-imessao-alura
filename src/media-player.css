@@ -1,0 +1,120 @@
+.Media-Player{
+    display: flex;
+    position: relative;
+    height: auto;
+    min-width: 610px;
+
+    height: 70px;
+
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    background: #000;
+    padding: 11px 24px 7px 15px;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.card-play{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.player-text{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-play img{
+    height: 65px;
+    border-radius: 12px;
+    border: 2px solid #fff;
+}
+
+.current-title{
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+
+    padding: 4px; 
+
+    color: var(--text-base-light);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.current-artist{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical; 
+
+    line-height: 1.2;
+
+    color: #b4b4b4;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fa-forward{
+    color: #b4b4b4;
+    font-size: 17px;
+    margin: 10px;
+}
+
+.fa-backward{
+    color: #b4b4b4;
+    font-size: 17px;
+    margin: 10px;
+}
+
+.player-status{
+    margin-top: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 630px;
+}
+
+#bar-2{
+    color: transparent;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(180,180,180,1) 25%);
+    font-size: 20px;
+    transform: scale(30,0.25);
+}
+
+.time_text{
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+
+    padding: 4px; 
+
+    color: var(--text-base-light);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.fa-pause {
+    padding: 14px;
+    background-color: #fff;
+    border-radius: 100%;
+    font-size: 18px;
+    transition: all ease 0.4s;
+}
+
+.fa-volume-high{
+    color: #b4b4b4;
+    font-size: 20px;
+    margin: 25px;
+    margin-bottom: 35px;
+}
