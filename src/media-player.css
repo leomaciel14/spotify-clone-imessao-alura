@@ -1,19 +1,29 @@
 .Media-Player{
     display: flex;
-    position: relative;
-    height: auto;
-    min-width: 610px;
-
-    height: 70px;
-
+    position: fixed;
     align-items: center;
     justify-content: space-between;
     text-align: center;
 
+    min-width: 100vh;
+    width: 100vi;
+    height: 70px;
+
     background: #000;
     padding: 11px 24px 7px 15px;
     margin-top: auto;
-    flex-shrink: 0;
+    flex-shrink: 1;
+
+    opacity: 0;
+    bottom: -100px;
+
+    transition: all ease 0.4s;
+}
+
+.Media-Player.show {
+    bottom: 0px;
+    opacity: 1;
+
 }
 
 .card-play{
@@ -42,7 +52,8 @@
     white-space: nowrap;
     overflow: hidden; 
 
-    padding: 4px; 
+    padding: 4px;
+    margin-left: -5px;
 
     color: var(--text-base-light);
     font-size: 18px;
@@ -83,12 +94,46 @@
     width: 630px;
 }
 
-#bar-2{
+.fa-circle-dot {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    position: relative;
+    left: -245px;
+    animation: moveRight 90s linear;
+    z-index: 1;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200px);
+    }
+}
+
+.progresso-main{
+    display: flex;
+    align-items: center;
+}
+
+.progresso {
+    background-color: #333; /* Cor escura inicial */
+    transform: scale(30, 0.25);
     color: transparent;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(180,180,180,1) 25%);
     font-size: 20px;
-    transform: scale(30,0.25);
+    background-size: 0% 100%; /* Defina o tamanho inicial para 0% */
+    transition: background 5s ease; /* Adiciona uma transição suave de 5 segundos */
+}
+
+/* Adicione um estilo para a animação de gradiente quando a classe 'loading' é aplicada */
+div.progresso.loading {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgb(33, 33, 33) 0%, rgb(15, 15, 15) 100%, rgba(180,180,180,1) 100%);
+    background-size: 100% 100%; /* Defina o tamanho final para 100% */
 }
 
 .time_text{
@@ -110,11 +155,12 @@
     border-radius: 100%;
     font-size: 18px;
     transition: all ease 0.4s;
+    cursor: pointer;
 }
 
 .fa-volume-high{
     color: #b4b4b4;
     font-size: 20px;
-    margin: 25px;
-    margin-bottom: 35px;
+    margin: 25px 60px 32px 0;
+    cursor: pointer;
 }

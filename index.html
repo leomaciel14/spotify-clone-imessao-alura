@@ -289,7 +289,7 @@
         </div>
     </footer>
 
-    <footer class="Media-Player">
+    <footer class="Media-Player" id="Media-Player">
         <div class="card-play">
             <img class="current-cover" id="current-cover" src="assets/playlist/2.jpg" alt="">
             <div class="player-text">
@@ -300,21 +300,24 @@
 
         <div class="player-options">
             <i class="fa fa-backward"></i>
-            <i class="fa fa-pause"></i>
+            <i class="fa fa-pause" id="pauseButton"></i>
             <i class="fa fa-forward"></i>
                 <div class="player-status">
                     <span class="time_text" id="time_current">0:00</span>
 
-                    <div class="progresso">
-                        <i class="fa fa-minus" id="bar-2"></i>
-                    </div>
+                    <a href="" class="progresso-main">
+                        <i class="fa fa-circle-dot" id="circleDot"></i>
+                        <div class="progresso" id="progresso">
+                            <i class="fa fa-minus" id="bar-2"></i>
+                        </div>
+                    </a>
 
                     <span class="time_text" id="time_remain">3:42</span>
                 </div>
 
         </div>
 
-        <div class="volume-options">
+        <div class="volume-options" id="volume-mute">
             <i class="fa fa-volume-high"></i>
         </div>
     </footer>
