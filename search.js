@@ -25,8 +25,8 @@ function hidePlaylists() {
 }
 
 // Localiza a API e prepara para pegar os resultados da pesquisa
-function requestApi(searchTerm) {
-    fetch(`http://localhost:3000/artists?name_like=${searchTerm}`)
+function requestApi(searchTerm) {    
+    fetch(`https://my-json-server.typicode.com/leomaciel14/JSON-Server-Test/artists?name_like=${searchTerm}`)
     .then((response) => response.json())
     .then((apiResults) => {
     results = apiResults;
